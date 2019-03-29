@@ -10,7 +10,7 @@
   
   <title>
     
-      Hello World | James 的博客
+      Go 编程语言入门 | James 的博客
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -144,8 +144,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>Hello World</h2>
-  <p class="post-date">2019-03-28</p>
+  <h2>Go 编程语言入门</h2>
+  <p class="post-date">2019-03-29</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -153,34 +153,69 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <section class="markdown-content"><h2 id="一、下载Go发行版"><a href="#一、下载Go发行版" class="headerlink" title="一、下载Go发行版"></a>一、下载Go发行版</h2><p><a href="https://golang.google.cn/dl/" target="_blank" rel="noopener">Go下载列表</a></p>
+<h2 id="二、系统要求"><a href="#二、系统要求" class="headerlink" title="二、系统要求"></a>二、系统要求</h2><p>_ Go 二进制发行版可用于这些受支持的操作系统和体系结构。在继续之前，请确保您的系统符合这些要求。如果您的操作系统或体系结构不在列表中，您可以 从源代码安装或使用 gccgo。_</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">操作系统</th>
+<th style="text-align:center">架构</th>
+<th style="text-align:center">笔记</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FreeBSD 10.3 或更高版本</td>
+<td style="text-align:center">amd64,386</td>
+<td style="text-align:center">Debian GNU / kFreeBSD 不受支持</td>
+</tr>
+<tr>
+<td style="text-align:center">使用 glibc 的 Linux 2.6.23 或更高版本</td>
+<td style="text-align:center">amd64,386，arm，arm64，s390x，ppc64le</td>
+<td style="text-align:center">不支持CentOS / RHEL 5.x. 从源代码安装其他libc。</td>
+</tr>
+<tr>
+<td style="text-align:center">macOS 10.10 或更高版本</td>
+<td style="text-align:center">AMD64</td>
+<td style="text-align:center">使用 Xcode 附带的 clang 或 gcc 作为支持 cgo</td>
+</tr>
+<tr>
+<td style="text-align:center">Windows 7，Server 2008R2 或更高版本</td>
+<td style="text-align:center">amd64,386</td>
+<td style="text-align:center">使用 MinGW gcc。不需要 cygwin 或 msys。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="三、安装Go开发环境"><a href="#三、安装Go开发环境" class="headerlink" title="三、安装Go开发环境"></a>三、安装Go开发环境</h2><p><em>如果要安装旧的版本，则必须先删除现有版本。</em></p>
+<ul>
+<li><a href="https://golang.google.cn/dl/" target="_blank" rel="noopener">下载zip文件</a>并将其解压缩到您选择的目录中。</li>
+<li>将 Go 安装目录下的 bin 目录（例如：D:/go/bin）添加进系统的 path 环境变量。</li>
+</ul>
+<h2 id="四、测试安装"><a href="#四、测试安装" class="headerlink" title="四、测试安装"></a>四、测试安装</h2><p>通过设置工作区和构建简单程序来检查Go是否已正确安装，如下所示。</p>
+<ol>
+<li>创建工作区目录 %USERPROFILE%\go。（如果您想使用其他目录，则需要设置GOPATH环境变量。）</li>
+<li><p>在工作区内创建目录 src/hello，并在该目录中创建一个名为的文件 hello.go，如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line">import &quot;fmt&quot;</span><br><span class="line">func main() &#123;</span><br><span class="line">    fmt.Printf(&quot;hello, world\n&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用 go 命令编译。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\&gt; cd %USERPROFILE%\go\src\hello</span><br><span class="line">C:\Users\Gopher\go\src\hello&gt; go build</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>上面的命令会在 hello.go 文件所在的目录生成一个 hello.exe 文件，运行文件查看输出。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Gopher\go\src\hello&gt; hello</span><br><span class="line">hello, world</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果看到 “hello，world”，说明安装成功。</p>
+</li>
+</ol>
+<h2 id="五、卸载Go"><a href="#五、卸载Go" class="headerlink" title="五、卸载Go"></a>五、卸载Go</h2><ol>
+<li>删除安装目录。</li>
+<li>删除环境变量中与 Go 相关的配置</li>
+</ol>
 </section>
     <!-- Tags START -->
     
     <!-- Tags END -->
     <!-- NAV START -->
     
-  <div class="nav-container">
-    <!-- reverse left and right to put prev and next in a more logic postition -->
-    
-    
-      <a class="nav-right" href="/2019/03/28/跟我学Java/">
-        
-          跟我学Java
-        
-        <span class="nav-arrow"> →</span>
-      </a>
-    
-  </div>
-
     <!-- NAV END -->
   </article>
   <!-- Article END -->
@@ -190,7 +225,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Quick-Start"><span class="toc-nav-text">Quick Start</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Create-a-new-post"><span class="toc-nav-text">Create a new post</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Run-server"><span class="toc-nav-text">Run server</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Generate-static-files"><span class="toc-nav-text">Generate static files</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Deploy-to-remote-sites"><span class="toc-nav-text">Deploy to remote sites</span></a></li></ol></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#一、下载Go发行版"><span class="toc-nav-text">一、下载Go发行版</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#二、系统要求"><span class="toc-nav-text">二、系统要求</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#三、安装Go开发环境"><span class="toc-nav-text">三、安装Go开发环境</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#四、测试安装"><span class="toc-nav-text">四、测试安装</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#五、卸载Go"><span class="toc-nav-text">五、卸载Go</span></a></li></ol>
     
   </div>
 </aside>
@@ -200,7 +235,7 @@
 
 <script>
   (function () {
-    var url = 'http://xx0508.github.io/2019/03/28/hello-world/';
+    var url = 'http://xx0508.github.io/2019/03/29/Go-编程语言/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
@@ -263,7 +298,7 @@
   var gitmentConfig = "xx0508";
   if (gitmentConfig !== 'undefined') {
     var gitment = new Gitment({
-      id: "Hello World",
+      id: "Go 编程语言入门",
       owner: "xx0508",
       repo: "xx0508.github.io",
       oauth: {
